@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --blue: #1f76bd;
+    --blue-dark: #12548d;
+    --green: #218b4f;
+    --red: #c62848;
+    --gold: #e9b949;
+    --ink: #17365d;
+    --white: #ffffff;
+}
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Montserrat",
+        Arial,
+        sans-serif;
+    color: var(--ink);
+}
+
+
+/*  FUNDO DA PÁGINA */
+
+body {
+
+    background:
+        radial-gradient(
+            circle at 12% 16%,
+            rgba(31, 118, 189, .20),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 88% 28%,
+            rgba(33, 139, 79, .13),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #eef7ff 0%,
+            #ffffff 48%,
+            #f5fbff 100%
+        );
+}
+
+
+/*   PORTAL  */
+
+.portal {
+    min-height: 100vh;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ÁREA PRINCIPAL */
+.hero {
+    position: relative;
+    isolation: isolate;
+    width: min(1180px, 100%);
+    min-height: 700px;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(31, 118, 189, .14);
+    padding: 42px 58px 30px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(31, 118, 189, .97),
+            rgba(18, 84, 141, .97) 48%,
+            rgba(31, 118, 189, .92)
+        );
+    box-shadow: 0 25px 70px rgba(18, 84, 141, .20);
+}
+
+
+/* PADRÃO TECNOLÓGICO */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    opacity: .20;
+    background-image:
+        linear-gradient(
+            120deg,
+            transparent 0 46%,
+            rgba(255, 255, 255, .55)
+            46.2% 46.4%,
+            transparent 46.6%
+        ),
+        linear-gradient(
+            30deg,
+            transparent 0 54%,
+            rgba(255, 255, 255, .30)
+            54.2% 54.4%,
+            transparent 54.6%
+        );
+    background-size: 250px 170px, 300px 220px;
+}
+
+
+/* CURVA INFERIOR */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: -5%;
+    right: -5%;
+    bottom: -15%;
+    height: 45%;
+    border-radius: 50% 50% 0 0;
+    background:rgba(255, 255, 255, .97);
+    box-shadow: 0 -18px 50px rgba(255, 255, 255, .12);
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+
+.logo {
+    width: 245px;
+    height: auto;
+    object-fit: contain;
+    background:rgba(255, 255, 255, .96);
+    border-radius: 10px;
+    padding: 8px 12px;
+    box-shadow:0 8px 24px rgba(0, 0, 0, .10);
+}
+
+.department {
+    color: white;
+    border-left:2px solid rgba(255, 255, 255, .40);
+    padding-left: 30px;
+    font-size: 17px;
+    line-height: 1.25;
+    text-shadow:0 2px 10px rgba(0, 0, 0, .15);
+
+}
+
+.department span {
+    display: block;
+    font-weight: 500;
+    opacity: .92;
+}
+
+.department strong {
+    display: block;
+    font-size:clamp(20px,2.5vw,31px);
+    font-weight: 700;
+}
+
+.intro {
+    text-align: center;
+    color: white;
+    max-width: 720px;
+    margin: 55px auto 30px;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 7px 13px;
+    border: 1px solid rgba(255, 255, 255, .34);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .10);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.intro h1 {
+    margin:13px 0 8px;
+    font-size: clamp(29px,4vw,46px);
+    line-height: 1.05;
+}
+
+.intro p {
+    margin:0 auto;
+    max-width: 650px;
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: .91;
+}
+
+
+/* CARDS */
+
+.actions {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1020px;
+    margin:0 auto;
+}
+
+
+/* CARD INDIVIDUAL */
+
+.action-card {
+    position: relative;
+    min-height: 255px;
+    padding: 31px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: var(--ink);
+    border-radius: 23px;
+    background:rgba(255, 255, 255, .95);
+    border: 1px solid rgba(255, 255, 255, .85);
+    box-shadow:0 16px 30px rgba(8, 54, 93, .17);
+    overflow: hidden;
+    transition:transform .22s ease, box-shadow .22s ease;
+}
+
+.action-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 7px;
+    background: var(--card);
+}
+
+.action-card::after {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    right: -90px;
+    bottom: -100px;
+    border-radius: 50%;
+    background: var(--soft);
+
+}
+
+.blue {
+    --card: var(--blue);
+    --soft:rgba(31, 118, 189, .11);
+}
+
+.green {
+    --card: var(--green);
+    --soft:rgba(33, 139, 79, .11);
+}
+
+.red {
+    --card: var(--red);
+    --soft:rgba(198, 40, 72, .10);
+}
+
+.action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 40px rgba(8, 54, 93, .25);
+}
+
+.action-card:focus-visible {
+    outline: 3px solid rgba(233, 185, 73, .9);
+    outline-offset: 4px;
+}
+
+.icon {
+    position: relative;
+    z-index: 1;
+    width: 78px;
+    height: 78px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+    border-radius: 19px;
+    color: var(--card);
+    background: var(--soft);
+}
+
+.icon svg {
+    width: 57px;
+    height: 57px;
+}
+
+.action-card h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    max-width: 245px;
+    text-transform: uppercase;
+    font-size: 17px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.arrow {
+    position: relative;
+    z-index: 1;
+    margin-top: 14px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: white;
+    background: var(--card);
+    font-size: 19px;
+    transition: transform .2s ease;
+}
+
+.action-card:hover .arrow {
+    transform: translateX(2px);
+}
+
+footer {
+    position: relative;
+    z-index: 2;
+    margin-top: 58px;
+    text-align: center;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-line {
+    width: 70px;
+    height: 4px;
+    border-radius: 999px;
+    margin: 0 auto 13px;
+    background:linear-gradient( 90deg, var(--blue), var(--gold), var(--green), var(--red));
+}
+
+footer strong {
+    font-size: 16px;
+}
+
+footer span {
+    font-size: 13px;
+    color: #80662b;
+    font-style: italic;
+}
+
+.circuit {
+    position: absolute;
+    pointer-events: none;
+    opacity: .18;
+    border:1px solid rgba(255, 255, 255, .65);
+}
+
+.circuit-a {
+    width: 310px;
+    height: 130px;
+    top: 120px;
+    right: -65px;
+    border-left: 0;
+    transform: skewX(-24deg);
+}
+
+.circuit-b {
+    width: 240px;
+    height: 100px;
+    top: 175px;
+    left: -90px;
+    border-right: 0;
+    transform: skewX(24deg);
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    .hero {
+        padding: 30px 24px 26px;
+    }
+    .topbar {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+    .department {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, .35);
+        padding:18px 0 0;
+    }
+    .intro {
+        margin-top: 38px;
+    }
+    .actions {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+    }
+    .action-card {
+        min-height: 215px;
+    }
+    footer {
+        margin-top: 38px;
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 480px) {
+    .portal {
+        padding: 0;
+    }
+    .hero {
+        min-height: 100vh;
+        border-radius: 0;
+        padding:24px 16px;
+    }
+    .logo {
+        width: 210px;
+    }
+    .department strong {
+        font-size: 19px;
+    }
+    .intro h1 {
+        font-size: 30px;
+    }
+    .intro p {
+        font-size: 13px;
+    }
+    .action-card {
+        min-height: 200px;
+    }
+}
